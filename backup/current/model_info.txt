@@ -1,0 +1,10 @@
+MALENA B 
+Age: 21
+Eyecolor: BROWN
+Haircolor: BROWN
+Height:  cm
+Weight:  kg
+Breast Size: Large
+Measurements: 
+Country: Russian Federation
+Ethnicity: Caucasian

@@ -1,0 +1,38 @@
+1. 
+Clientes= 1, ext. ratio= 10dB, DSNR= 36.5dB, OSNR= 10dB
+   ../ber c1rex10_2.dat ../../../strings2/AT_1_1000.dat
+   BER= 0.102073
+   ojo: c1rex10_2.png
+
+2.
+Clientes= 1, ext. ratio= 1,1 veces, DSNR= 36.5dB, OSNR= 30dB
+   ../ber c1rex1_1_2.dat ../../../strings2/AT_1_1000.dat
+   BER= 0.345046
+   ojo: c1rex1_1_2.png
+
+3.
+Clientes= 1, ext. ratio= 10dB, DSNR= 100dB, OSNR= 10dB
+   ../ber c1d100o10rex10.dat ../../../strings2/AT_1_1000.dat
+   BER= 0.102119 
+   ojo: c1d100o10rex10.png
+
+4.
+Clientes= 1, ext. ratio= 1,1 veces, DSNR= 100dB, OSNR= 30dB
+   ../ber c1d100o30rex1_1.dat ../../../strings2/AT_1_1000.dat
+   BER= 0.344792
+   ojo: c1d100o30rex1_1.png
+
+4. 
+Bessel, Clientes= 1, ext. ratio= 10dB, DSNR= 36.5dB, OSNR= 10dB
+  nohup ./noisesim3 1 36.5 10 <../../strings2/AT_1_1000.dat >BesC1D36O10rex10dB.dat &
+  ojo: BesC1D36O10rex10dB.png 
+  ../ber BesC1D36O10rex10dB.dat ../../../strings2/AT_1_1000.dat
+  BER= 0.157099
+
+5
+OCutOff= 50GHz, Clientes= 1, ext. ratio= 10dB, DSNR= 36.5dB, OSNR= 10dB
+  nohup ./noisesim4 1 36.5 10 <../../strings2/AT_1_1000.dat >50GHzC1D36O10rex10dB.dat &
+  ojo: 50GHzBesC1D36O10rex10dB.png
+  ../ber 50GHzBesC1D36O10rex10dB.dat ../../../strings2/AT_1_1000.dat
+  BER= 0.160453
+ 

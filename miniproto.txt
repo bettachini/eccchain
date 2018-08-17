@@ -1,0 +1,14 @@
+Protocolo de seleccion de rate:
+Punto-multipunto:
+
+	El servidor sensa la cantidad de trafico del canal, y de acuerdo al trafico (Cantidad de unos) elige un valor de rate (16 niveles?) y lo envia siempre como el primer byte de la trama. El cliente solamente se limita a modificar su algorimo al recibir cada trama del servidor. En principio el servidor puede modificar el rate en cada trama, pero en la practica esto puede realizarse cada cierta cantidad de tiempo, por ejemplo 10 milisegundos. El cliente repite el mismo byte hacia el servidor.
+	NOTA: Cuando se cambia el rate, la informacion del nuevo rate se envia codificada en el rate anterior (De lo contrario el cliente no podria recibirla) por lo que si el servidor no recibe correctamente la trama con el nuevo rate y el primer byte afirmando el rate, supone que el cambio de rate no funciono y debera reenviar el mensaje de cambio de rate.
+
+	Trama servidor->cliente: [byte de control][datos]
+	Trama cliente->servidor: [copia del byte de control][datos]
+
+Multipunto-multipunto:
+	En teoria podria usarse el mismo algoritmo y comportarse todos los clientes como servidores. Al recibir todos los mismos datos, deberian poder calcular todos el mismo rate y no se necesitaria ningun byte de control
+	Trama: [datos]
+
+	

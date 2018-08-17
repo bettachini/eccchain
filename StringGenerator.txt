@@ -1,0 +1,44 @@
+From ortegaalfredo@gmail.com Sat Oct 10 22:03:14 2009
+Date: Sat, 10 Oct 2009 22:03:07 -0300
+From: Alfredo Ortega <ortegaalfredo@gmail.com>
+To: Victor A Bettachini <vbettach@itba.edu.ar>
+Subject: Re: codigo noisesim corregido
+
+Para simular uno de 1 gigabit tenes que modificar esta linea dentro
+del script pipes-clientserver:
+
+dd if=/dev/urandom of=test.txt count=16
+
+El parametro es el "count", para un gigabit seria 262144, eso va a
+crear un archivo de 128 Megabytes (1 gigabit) en tu rigido y
+probablemente esta un dia o mas para terminar, asi que ojo...
+Lo que hago yo, es divir por 32, y correr 32 veces ese script con un
+count de 8192, y despues sumo los resultados que es lo mismo...
+
+Estoy largando las simulaciones con el nuevo noisesim...
+Saludos!
+
+
+El día 10 de octubre de 2009 20:04, Victor A Bettachini
+<vbettach@itba.edu.ar> escribió:
+> Alfredo:
+>
+> Te envio la última versión de noisesim.c
+>
+> Corre con los mismos parametros: .\noisesim 128 42 99 <[arch de entrada]
+>>[arch de salida]
+>
+> Si no hay nada muy raro no debiera meterte error en la cadena, pero para
+> verificarlo necesito que me respondas a lo que te envie por jabber:
+>
+> Despues de correr:
+> ./pipes-clientserver.sh 128
+> el entradaFisica.out que me genera es de 332K, es decir representa 332kbits
+> ¿Como hago para generar uno de 1Gbit?
+>
+>
+> Ahora me voy a casa. Pienso retomar el trabajo mañana. De todas formas reviso
+> el correo al llegar.
+>
+> Saludos.
+>

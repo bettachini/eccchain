@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+#include "gaussiana.h"
+
+int main(void) {
+  unsigned long int i;
+  unsigned long int Tmax=1024;		// puntos muestreo vector de campo
+  double pulso1[Tmax],pulso0[Tmax];	// vectores campo para '1' y '0'
+  double re=1;				// Extinction ratio, razon potencia '1' y '0'
+  double T=1.0;				// Duracion pulso
+  double D=1.0;				// Duty Cycle
+
+  gaussiana(pulso1,Tmax);			// genera pulso '1'
+  for(i=0; i<Tmax; i++) pulso0[i]= re;	// genera pulso '0'
+
+  for(i=0; i<Tmax; i++) {
+    printf("%f\n",pulso1[i]);
+  }
+
+  return 0;
+}
+

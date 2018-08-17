@@ -1,0 +1,27 @@
+noisesim: señales en cada etapa
+
+Haciendo una corrida con:
+
+clientes= 128
+DSNR= 36.5
+OSNR= 37.25
+
+y alimentando con la secuencia de número de bits 1 por bit slot: AT_128_1.dat
+
+Amplitud [sqrt{W}] a la salida de los Tx: RZPulsesTrain.dat
+
+Se lo atenua (Tx-> EDFA)y amplifica (EDFA) obteniendo: AtEDFAoutWON.dat
+
+A esto se le suma el vector de ruido óptico: ONoiseVector.dat
+obteniendo: AtEDFAout.dat
+
+Luego de ser atenuada (EDFA-> Rx) y aplicado el filtrado óptico en la entrada del Rx: OptFilt.dat
+
+La señal es luego fotodetectada [A]: PhotodetectedI.dat
+
+Se le agrega el ruido eléctrico en el detector: DNoiseVector.dat
+quedando: atElectFiltInput.dat
+
+Luego del filtrado eléctrico queda: ElecFilt.dat
+
+De la comparación con el nivel de decisión se obtiene la salida binaria: out.dat

@@ -1,0 +1,204 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 51.75      0.15     0.15  2146880     0.00     0.00  Gasdev
+ 20.70      0.21     0.06        7     8.58     8.58  RZTrain
+ 10.35      0.24     0.03        7     4.29    27.41  Link
+  6.90      0.26     0.02       17     1.18    10.01  GenRuidoRapido
+  6.90      0.28     0.02       10     2.00     2.00  OpticalFilter
+  3.45      0.29     0.01        9     1.11     1.11  ElectricalFilter
+  0.00      0.29     0.00        1     0.00    38.24  BitSlots
+  0.00      0.29     0.00        1     0.00     0.00  Dnoise
+  0.00      0.29     0.00        1     0.00     0.00  InputParameters
+  0.00      0.29     0.00        1     0.00     0.00  Onoise
+  0.00      0.29     0.00        1     0.00     0.00  RandIntString
+  0.00      0.29     0.00        1     0.00    23.12  Threshold3
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 3.45% of 0.29 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00    0.29                 main [1]
+                0.03    0.16       7/7           Link [2]
+                0.06    0.00       7/7           RZTrain [5]
+                0.00    0.04       1/1           BitSlots [6]
+                0.00    0.00       1/1           InputParameters [11]
+-----------------------------------------------
+                0.03    0.16       7/7           main [1]
+[2]     66.1    0.03    0.16       7         Link [2]
+                0.02    0.12      14/17          GenRuidoRapido [3]
+                0.01    0.00       7/10          OpticalFilter [8]
+                0.01    0.00       7/9           ElectricalFilter [9]
+-----------------------------------------------
+                0.00    0.01       1/17          BitSlots [6]
+                0.00    0.02       2/17          Threshold3 [7]
+                0.02    0.12      14/17          Link [2]
+[3]     58.6    0.02    0.15      17         GenRuidoRapido [3]
+                0.15    0.00 2146880/2146880     Gasdev [4]
+-----------------------------------------------
+                0.15    0.00 2146880/2146880     GenRuidoRapido [3]
+[4]     51.7    0.15    0.00 2146880         Gasdev [4]
+-----------------------------------------------
+                0.06    0.00       7/7           main [1]
+[5]     20.7    0.06    0.00       7         RZTrain [5]
+-----------------------------------------------
+                0.00    0.04       1/1           main [1]
+[6]     13.2    0.00    0.04       1         BitSlots [6]
+                0.00    0.02       1/1           Threshold3 [7]
+                0.00    0.01       1/17          GenRuidoRapido [3]
+                0.00    0.00       2/10          OpticalFilter [8]
+                0.00    0.00       1/9           ElectricalFilter [9]
+                0.00    0.00       1/1           Onoise [12]
+                0.00    0.00       1/1           Dnoise [10]
+-----------------------------------------------
+                0.00    0.02       1/1           BitSlots [6]
+[7]      8.0    0.00    0.02       1         Threshold3 [7]
+                0.00    0.02       2/17          GenRuidoRapido [3]
+                0.00    0.00       1/10          OpticalFilter [8]
+                0.00    0.00       1/9           ElectricalFilter [9]
+                0.00    0.00       1/1           RandIntString [13]
+-----------------------------------------------
+                0.00    0.00       1/10          Threshold3 [7]
+                0.00    0.00       2/10          BitSlots [6]
+                0.01    0.00       7/10          Link [2]
+[8]      6.9    0.02    0.00      10         OpticalFilter [8]
+-----------------------------------------------
+                0.00    0.00       1/9           Threshold3 [7]
+                0.00    0.00       1/9           BitSlots [6]
+                0.01    0.00       7/9           Link [2]
+[9]      3.4    0.01    0.00       9         ElectricalFilter [9]
+-----------------------------------------------
+                0.00    0.00       1/1           BitSlots [6]
+[10]     0.0    0.00    0.00       1         Dnoise [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[11]     0.0    0.00    0.00       1         InputParameters [11]
+-----------------------------------------------
+                0.00    0.00       1/1           BitSlots [6]
+[12]     0.0    0.00    0.00       1         Onoise [12]
+-----------------------------------------------
+                0.00    0.00       1/1           Threshold3 [7]
+[13]     0.0    0.00    0.00       1         RandIntString [13]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+   [6] BitSlots                [3] GenRuidoRapido          [8] OpticalFilter
+  [10] Dnoise                 [11] InputParameters         [5] RZTrain
+   [9] ElectricalFilter        [2] Link                   [13] RandIntString
+   [4] Gasdev                 [12] Onoise                  [7] Threshold3
